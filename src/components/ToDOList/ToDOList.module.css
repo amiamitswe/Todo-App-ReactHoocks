@@ -1,0 +1,9 @@
+.Button {
+  margin-left: 5px;
+}
+
+.Button:disabled {
+  cursor: not-allowed;
+  background-color: #000;
+  border-color: #000;
+}
