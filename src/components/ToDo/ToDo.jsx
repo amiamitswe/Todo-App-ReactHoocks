@@ -37,6 +37,14 @@ const ToDo = () => {
     setToDoList(myTodoList)
   }
 
+  const updateToDo = (index, updateTodo) => {
+    const myTodoList = [...toDoList]
+    myTodoList[index].todo = updateTodo
+    setToDoList(myTodoList)
+
+    console.log('Update Success');
+  }
+
 
   return (
     <React.Fragment>
@@ -47,10 +55,12 @@ const ToDo = () => {
         {toDoList.map((todo, index) => (
           <ToDoList
             key={index}
+            index={index}
             todo={todo.todo}
             isComplete={todo.isComplete}
             todoComplete={() => todoCompleteHandler(index)}
             deleteToDo = {() => deleteToDoHandler(index)}
+            updateToDo={updateToDo}
           />
         ))}
       </ListGroup>
